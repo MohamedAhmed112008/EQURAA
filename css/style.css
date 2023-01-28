@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+*
+{
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+}
+
+:root
+{
+      --mainColor:#10cab7;
+      --secounColor:#2c4755;
+      --sectionPadding:60px;
+      --BackgroundColor:#f6f6f6f6;
+}
+
+ul
+{
+      list-style-type: none;
+}
+
+.main-heading
+{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.main-heading a
+{
+      text-decoration: none;
+      color: var(--mainColor);
+      font-size: 30px;
+      padding: 10px;
+      margin-left: 10px;
+}
+.main-heading a i
+{
+      transition: 0.3s;
+      margin-right: 5px;
+}
+
+.main-heading a:nth-child(2) i
+{
+      padding: 10px;
+}
+
+.main-heading a:nth-child(2):hover i
+{
+      background-color: var(--mainColor);
+      width: fit-content;
+      border-radius: 50%;
+      color: black;
+}
+
+.container {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: auto;
+      margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+      .container {
+        width: 750px;
+      }
+}
+    /* Medium */
+    @media (min-width: 992px) {
+      .container {
+        width: 970px;
+      }
+}
+    /* Large */
+    @media (min-width: 1200px) 
+    {
+      .container {
+        width: 1170px;
+      }
+}
+
+/*start project*/
+body
+{
+      background-color: var(--secounColor);
+}
+
+header
+{
+      border-right: 2px solid #333;
+      display: flex;
+      flex-direction: column;
+      width: 20%;
+      position: fixed;
+      height: 100%;
+}
+
+header .container
+{
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+}
+
+header .container .logo
+{
+      color: var(--mainColor);
+      text-decoration: none;
+      font-size: 40px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--sectionPadding);
+}
+
+header .container ul
+{
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+}
+
+header .container ul li
+{
+      margin: 20px 0;
+      padding: 10px;
+      transition: 0.3s;
+      position: relative;
+      display: flex;
+      align-items: center;
+}
+header .container ul li::before
+{
+      content: "";
+      position: absolute;
+      height: 115%;
+      width: 100%;
+      background:#333;
+      transform: translateX(-200%);
+      transition: 0.6s;
+      z-index: -1;
+}
+
+header .container ul li:first-child:before
+{
+      transform: translateX(-11%);
+}
+header .container ul li:hover::before
+{
+      transform: translateX(-11%);
+}
+
+header .container ul li i
+{
+      font-size: 20px;
+      margin-right: 20px;
+      color: var(--mainColor);
+}
+
+header .container ul li a
+{
+      color: var(--mainColor);
+      text-decoration: none;
+      font-size: 20px;
+}
+
+@media(min-width:768px)
+{
+      .icon
+      {
+            display: none;
+      }
+}
+
+@media(max-width:767px)
+{
+      header
+      {
+            flex-direction: row;
+            position: unset;
+            width: 100%;
+      }
+      header .container
+      {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+      }
+      header .container .logo
+      {
+            margin: 0;
+      }
+      header .container .links i
+      {
+            position: relative;
+            font-size: 30px;
+            color: var(--mainColor);
+      }
+
+      header .container .links ul
+      {
+            position: absolute;
+            left: 0;
+            top: calc( 5% + 20px);
+            justify-content: center;
+            width: 100%;
+            background-color: #152933;
+            transform: translateY(-200%);
+            display: none;
+      }
+
+      header .container .links ul li
+      {
+            justify-content: center;
+            margin: 10px 0;
+      }
+
+      header .container .links ul li a
+      {
+            font-size: 15px;
+      }
+      header .container .links ul li a i
+      {
+            font-size: 15px;
+      }
+
+      header .container .links ul li:before
+      {
+            display: none;
+      }
+      header .container .links a:hover + ul
+      {
+            display: flex;
+            transform: translateY(0);
+      }
+}
+
+.main
+{
+      display: flex;
+      margin-left:25%;
+      margin-top: 20px;
+}
+
+@media(max-width:767px)
+{
+      .main
+      {
+            margin-left: 0;
+      }
+
+      .content
+      {
+            justify-content: center;
+      }
+}
+
+.Reading
+{
+      display: grid;
+      grid-template-columns: repeat(autofill,minmax(250px,1fr));
+}
+
+.Reading .content
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.Reading .content .book
+{
+      width: 250px;
+    border: 1px solid var(--mainColor);
+    transition: 0.5s;
+}
+
+.Reading .content .book:hover
+{
+      transform: scale(1.1 , 1.1);
+}
+
+.Reading .content .book:hover .info a i
+{
+      animation: arrow 0.7s linear infinite;
+}
+
+.Reading .content .book img
+{
+      width: 100%;
+      padding: 10px;
+      height: 250px;
+}
+
+.Reading .content .book .info
+{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+
+.Reading .content .book .info h1
+{
+      margin: 0;
+      font-size: 24px;
+      padding: 10px;
+      color: var(--mainColor);
+      font-weight: 100;
+}
+
+.Reading .content .book .info a
+{
+      text-decoration: none;
+      font-size: 20px;
+      color: var(--mainColor);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      font-weight: 100;
+}
+
+ .Listining
+{
+      margin: 100px 0;
+}
+
+.Writers
+{
+      margin-bottom: 200px;
+}
+
+.others
+{
+      margin-bottom: 100px;
+}
+
+.others .content
+{
+      justify-content: center;
+}
+
+/*scroll bar*/
+::-webkit-scrollbar
+{
+      width: 5px;
+}
+::-webkit-scrollbar-thumb
+{
+      background-color: #10cab7;
+}
+
+::-webkit-scrollbar-track
+{
+      background-color: transparent;
+} 
+/*scroll bar*/
+
+/*animation*/
+@keyframes arrow {
+
+100%
+{
+      transform: translateX(5px);
+}
+}
+/*animation*/

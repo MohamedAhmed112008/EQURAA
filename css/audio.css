@@ -1,0 +1,19 @@
+header .container ul li:nth-child(3):before
+{
+      transform: translateX(-11%);
+}
+
+header .container ul li:nth-child(2):before
+{
+      transform: translateX(-200%);
+}
+
+header .container ul li:nth-child(2):hover::before
+{
+      transform: translateX(-11%);
+}
+
+.content
+{
+      margin-left: 23%;
+}

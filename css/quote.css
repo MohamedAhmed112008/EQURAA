@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+*
+{
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
+}
+
+:root
+{
+      --mainColor:#10cab7;
+      --secounColor:#2c4755;
+      --sectionPadding:60px;
+      --BackgroundColor:#f6f6f6f6;
+}
+
+header .container .links ul li:last-child:before
+{
+      transform: translateX(-11%);
+}
+
+header .container .links ul li:first-child:before
+{
+      transform: translateX(-200%);
+}
+header .container .links ul li:hover:first-child:before
+{
+      transform: translateX(-11%);
+}
+
+.content
+{
+      margin-left: 22%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+}
+
+.content .quote
+{
+      border: 1px solid var(--mainColor);
+      margin-bottom: 20px;
+      border-radius: 20px;
+      padding: 20px;
+}
+
+.content .quote img
+{
+      border: 1px solid var(--mainColor);
+      border-radius: 20px;
+}
+
+.content .quote .text
+{
+      display: flex;
+      color: var(--mainColor);
+      flex-direction: column;
+      line-height: 1.8;
+}
+
+.content .quote .text q
+{
+      font-size: 20px;
+      margin: 20px;
+}
+
+@media (max-width:767px)
+{
+      .content
+      {
+            margin: 0;
+            justify-content: center;
+      }
+}
